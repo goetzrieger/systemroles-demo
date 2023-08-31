@@ -1,7 +1,7 @@
-- name: run rhc system role
-  hosts: all
-  roles:
-    - redhat.rhel_system_roles.rhc
+#- name: run rhc system role
+#  hosts: all
+#  roles:
+#    - redhat.rhel_system_roles.rhc
 
 - name: run journald system role
   hosts: all
