@@ -1,0 +1,19 @@
+- name: run rhc system role
+  hosts: all
+  roles:
+    - redhat.rhel_system_roles.rhc
+
+- name: run journald system role
+  hosts: all
+  roles:
+    - redhat.rhel_system_roles.journald
+
+- name: run podman system role
+  hosts: all
+  roles:
+    - redhat.rhel_system_roles.podman
+
+- name: run cockpit system role
+  hosts: all
+  roles:
+    - redhat.rhel_system_roles.cockpit
