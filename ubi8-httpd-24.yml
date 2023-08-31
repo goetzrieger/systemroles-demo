@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubi8-httpd-24
+spec:
+  containers:
+    - name: ubi8-httpd-24
+      image: registry.access.redhat.com/ubi8/httpd-24
+      ports:
+        - containerPort: 8080
+          hostPort: 8080
+      volumeMounts:
+        - mountPath: /var/www/html:Z
+          name: ubi8-httpd-24-html
+  volumes:
+    - name: ubi8-httpd-24-html
+      hostPath:
+        path: /home/student/ubi8-httpd-24-html
