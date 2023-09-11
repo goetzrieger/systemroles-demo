@@ -1,0 +1,34 @@
+#rhc system role variables:
+rhc_state: present
+rhc_auth:
+  activation_keys:
+    keys: 
+      - "<name>"
+rhc_organization: "<orgid>"
+
+#journald system role variables:
+journald_persistent: true
+journald_per_user: true
+journald_max_file_size: 100
+journald_max_files: 10
+
+#podman system role variables:
+podman_firewall:
+  - port: 8080/tcp
+    state: enabled
+podman_create_host_directories: true
+podman_host_directories:
+  "/home/student/ubi8-httpd-24-html":
+    owner: student
+    group: student
+    mode: "0755"
+podman_kube_specs:
+  - state: started
+    run_as_user: student
+    run_as_group: student
+    kube_file_src: ubi8-httpd-24.yml
+
+#cockpit system role variables:
+cockpit_packages:
+  - cockpit-podman
+cockpit_manage_firewall: true
