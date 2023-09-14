@@ -1,0 +1,46 @@
+---
+- name: Configure automation controller
+  hosts: localhost
+  become: false
+  gather_facts: false
+  tasks:
+  # - name: Create an inventory
+  #   ansible.controller.inventory:
+  #     name: Lab inventory
+  #     organization: Default
+  # - name: Add hosts to inventory
+  #   ansible.controller.host:
+  #     name: "{{  item }}"
+  #     inventory: Lab inventory
+  #     state: present
+  #   loop:
+  #     - node1.<LABID>.internal
+  #     - node2.<LABID>.internal
+  #     - node3.<LABID>.internal
+  # - name: Machine Credentials
+  #   ansible.controller.credential:
+  #     name: Lab Credentials
+  #     credential_type: Machine
+  #     organization: Default
+  #     inputs:
+  #       username: ec2-user
+  #       ssh_key_data: "{{ lookup('file', '~/.ssh/<LABID>key.pem' ) }}"
+  - name: Project
+    ansible.controller.project:
+      name: System Roles Demo
+      organization: Default
+      state: present
+      scm_update_on_launch: True
+      scm_delete_on_update: True
+      scm_type: git
+      scm_url: https://github.com/goetzrieger/systemroles-demo.git
+  - name: Job Template
+    ansible.controller.job_template:
+      name: System Roles Demo
+      organization: Default
+      state: present
+      inventory: Workshop Inventory
+      become_enabled: True
+      playbook: system-roles.yml
+      project: System Roles Demo
+      credential: Workshop Credentials
