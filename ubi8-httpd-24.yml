@@ -15,4 +15,4 @@ spec:
   volumes:
     - name: ubi8-httpd-24-html
       hostPath:
-        path: /home/student/ubi8-httpd-24-html
+        path: /home/ec2-user/ubi8-httpd-24-html
