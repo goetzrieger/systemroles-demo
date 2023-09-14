@@ -19,13 +19,13 @@ podman_firewall:
 podman_create_host_directories: true
 podman_host_directories:
   "/home/student/ubi8-httpd-24-html":
-    owner: student
-    group: student
+    owner: ec2-user
+    group: ec2-user
     mode: "0755"
 podman_kube_specs:
   - state: started
-    run_as_user: student
-    run_as_group: student
+    run_as_user: ec2-user
+    run_as_group: ec2-user
     kube_file_src: ubi8-httpd-24.yml
 
 #cockpit system role variables:
