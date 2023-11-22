@@ -44,3 +44,13 @@
       playbook: system-roles.yml
       project: System Roles Demo
       credential: Workshop Credentials
+  - name: Job Template
+    ansible.controller.job_template:
+      name: Prepare Hosts
+      organization: Default
+      state: present
+      inventory: Workshop Inventory
+      become_enabled: True
+      playbook: prep-hosts.yml
+      project: System Roles Demo
+      credential: Workshop Credentials
