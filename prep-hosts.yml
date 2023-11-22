@@ -15,5 +15,8 @@
       src: /etc/pki/product-default/
       dest: /etc/pki/product/
       remote_src: yes
+
+  - name: clean rhsm
+    command: subscription-manager clean
       
   
