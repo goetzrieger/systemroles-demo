@@ -1,0 +1,12 @@
+- name: run journald system role
+  hosts: all
+  tasks:
+  - name: check for rhsm.conf.kat-backup
+    stat:
+      path: '/etc/rhsm/rhsm.conf.kat-backup'
+    register: rhsmconf
+    
+  - name: Rename rhsm.conf
+    command: mv "/etc/rhsm/rhsm.conf.kat-backup" "/etc/rhsm/rhsm.conf"
+    when: rhsmconf.stat.exists == true
+  
