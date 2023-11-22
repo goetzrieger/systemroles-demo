@@ -7,8 +7,8 @@
         keys:
           -  "{{ activationkey }}"
     rhc_organization: "{{ orgid }}"
-    # rhc_insights:
-    #   state: absent
+    rhc_insights:
+      state: absent
   roles:
     - redhat.rhel_system_roles.rhc
 
