@@ -1,10 +1,10 @@
 #rhc system role variables:
-# rhc_state: present
-# rhc_auth:
-#   activation_keys:
-#     keys:
-#       - "<name>"
-# rhc_organization: "<orgid>"
+rhc_state: present
+rhc_auth:
+  activation_keys:
+    keys:
+      - "activationkey"
+rhc_organization: "orgid"
 
 #journald system role variables:
 journald_persistent: true

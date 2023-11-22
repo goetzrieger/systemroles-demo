@@ -1,14 +1,14 @@
-# - name: run rhc system role
-#   hosts: all
-#   # vars:
-#   #   rhc_state: present
-#   #   rhc_auth:
-#   #     activation_keys:
-#   #       keys:
-#   #         -  "{{ activationkey }}"
-#   #   rhc_organization: "{{ orgid }}"
-#   roles:
-#     - redhat.rhel_system_roles.rhc
+- name: run rhc system role
+  hosts: all
+  vars:
+    rhc_state: present
+    rhc_auth:
+      activation_keys:
+        keys:
+          -  "{{ activationkey }}"
+    rhc_organization: "{{ orgid }}"
+  roles:
+    - redhat.rhel_system_roles.rhc
 
 - name: run journald system role
   hosts: all
