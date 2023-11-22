@@ -1,4 +1,4 @@
-- name: run journald system role
+- name: prep hosts for demo
   hosts: all
   tasks:
   - name: check for rhsm.conf.kat-backup
