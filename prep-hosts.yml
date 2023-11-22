@@ -18,5 +18,8 @@
 
   - name: clean rhsm
     command: subscription-manager clean
+
+  - name: enable rhsm repo handling
+    command: subscription-manager config --rhsm.manage_repos=1
       
   
