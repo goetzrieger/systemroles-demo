@@ -5,6 +5,8 @@ rhc_auth:
     keys:
       - "activationkey"
 rhc_organization: "orgid"
+rhc_insights:
+      state: absent
 
 #journald system role variables:
 journald_persistent: true
