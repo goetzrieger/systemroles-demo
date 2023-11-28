@@ -25,5 +25,5 @@
 - name: run cockpit system role
   hosts: all
   roles:
-    - redhat.rhel_system_roles.cockpit
-      when: cockpit==true
+    #- redhat.rhel_system_roles.cockpit
+    - { role: redhat.rhel_system_roles.cockpit, when: cockpit == 'true' }
