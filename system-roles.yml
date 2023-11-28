@@ -26,4 +26,4 @@
   hosts: all
   roles:
     - redhat.rhel_system_roles.cockpit
-  when: cockpit==true
+      when: cockpit==true
