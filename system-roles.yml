@@ -1,16 +1,16 @@
-- name: run rhc system role
-  hosts: all
-  vars:
-    rhc_state: present
-    rhc_auth:
-      activation_keys:
-        keys:
-          -  "{{ activationkey }}"
-    rhc_organization: "{{ orgid }}"
-    rhc_insights:
-      state: absent
-  roles:
-    - redhat.rhel_system_roles.rhc
+#- name: run rhc system role
+#  hosts: all
+#  vars:
+#    rhc_state: present
+#    rhc_auth:
+#      activation_keys:
+#        keys:
+#          -  "{{ activationkey }}"
+#    rhc_organization: "{{ orgid }}"
+#    rhc_insights:
+#      state: absent
+#  roles:
+#    - redhat.rhel_system_roles.rhc
 
 - name: run journald system role
   hosts: all
@@ -26,3 +26,4 @@
   hosts: all
   roles:
     - redhat.rhel_system_roles.cockpit
+  when: cockpit==true
